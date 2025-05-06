@@ -11,38 +11,6 @@ class _FirstViewState extends State<FirstView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-        appBar: AppBar(title: Text("This is my app bar"),
-        centerTitle: true,
-        backgroundColor: Colors.red,
-        elevation: 0,),
-        body: Column(
-          children: [
-            SizedBox(height: 10,),
-            TextField(
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Enter your number',
-              ),
-            ),
-            SizedBox(height: 10,),
-            TextField(
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Enter your number',
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(onPressed: (){}, child: Text("Add")),
-            ),
-            Text("Result: 0")
-          ],
-        )
-      );
-=======
       appBar: AppBar(title: const Text("Dashboard")),
       body: ListView(
         padding: const EdgeInsets.all(20),
@@ -66,6 +34,5 @@ class _FirstViewState extends State<FirstView> {
         ],
       ),
     );
->>>>>>> 88d3092 (update)
   }
 }

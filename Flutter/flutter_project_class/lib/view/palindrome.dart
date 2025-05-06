@@ -43,6 +43,8 @@ class _PalindromeNumberState extends State<PalindromeNumber> {
         children: [
           SizedBox(height: 8),
           SizedBox(height: 8),
+          SizedBox(height: 8),
+          SizedBox(height: 8),
           TextField(
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
