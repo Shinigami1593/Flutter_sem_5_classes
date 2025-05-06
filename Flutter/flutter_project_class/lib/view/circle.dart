@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_class/modal/circle_area_modal.dart';
 
 class Circle extends StatefulWidget {
   const Circle({super.key});
@@ -10,6 +11,8 @@ class Circle extends StatefulWidget {
 class _CircleState extends State<Circle> {
   double result = 0.0;
   int r = 0;
+
+  late CircleAreaModal modal;
 
   void calculateArea(value) {
     setState(() {
@@ -44,7 +47,8 @@ class _CircleState extends State<Circle> {
               backgroundColor: const Color.fromARGB(255, 187, 216, 240)
             ),
             onPressed: () {
-              calculateArea(r);
+              modal = CircleAreaModal(radius: r);
+              result = modal.areaCircle();
             },
             child: Text("Calculate",),
           ),

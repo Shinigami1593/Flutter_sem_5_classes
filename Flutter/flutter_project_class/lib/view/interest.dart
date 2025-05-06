@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_class/modal/simple_interest_modal.dart';
 
 class SimpleInterest extends StatefulWidget {
   const SimpleInterest({super.key});
@@ -15,11 +16,7 @@ class _SimpleInterestState extends State<SimpleInterest> {
   double result = 0;
 
   //calculation function
-  void calculateSimpleInterest(int p,int t,int r){
-    setState(() {
-      result = (p*t*r)/100;
-    });
-  }
+  late SimpleInterestModal modal;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +74,8 @@ class _SimpleInterestState extends State<SimpleInterest> {
               backgroundColor: const Color.fromARGB(255, 238, 192, 192)
             ),
             onPressed: (){
-              calculateSimpleInterest(p, t, r);
+              modal = SimpleInterestModal(principal: p, rate: r, time: t);
+              result = modal.simpleInterest();
             }, 
             child: Text("Calculate SI")
             ),

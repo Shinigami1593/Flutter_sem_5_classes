@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_class/modal/palindrome_modal.dart';
 
 class PalindromeNumber extends StatefulWidget {
   const PalindromeNumber({super.key});
@@ -12,25 +13,7 @@ class _PalindromeNumberState extends State<PalindromeNumber> {
   int number = 0;
 
   //function to check if it is palindrome or not
-
-  void checkPalindrome(int number) {
-    int original = number;
-    int reversed = 0;
-
-    while (number > 0) {
-      int digit = number % 10;
-      reversed = reversed * 10 + digit;
-      number ~/= 10;
-    }
-
-    bool isPalindrome = (original == reversed);
-
-    setState(() {
-      // Store result in a variable to display in the UI
-      result = isPalindrome;
-    });
-  }
-
+  late PalindromeModal modal;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +24,6 @@ class _PalindromeNumberState extends State<PalindromeNumber> {
       ),
       body: Column(
         children: [
-          SizedBox(height: 8),
-          SizedBox(height: 8),
           SizedBox(height: 8),
           SizedBox(height: 8),
           TextField(
@@ -57,7 +38,8 @@ class _PalindromeNumberState extends State<PalindromeNumber> {
           SizedBox(height: 8),
           ElevatedButton(
             onPressed: () {
-              checkPalindrome(number);
+              modal = PalindromeModal(value: number);
+              
             },
             child: Text("Check if palindrome or not"),
           ),
