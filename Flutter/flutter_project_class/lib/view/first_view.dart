@@ -31,6 +31,49 @@ class _FirstViewState extends State<FirstView> {
             onPressed: () => Navigator.pushNamed(context, '/palindrome'),
             child: const Text("Palindrome Number"),
           ),
+          SizedBox(
+            height: 100,
+          ),
+          Container(
+            color: const Color.fromARGB(255, 255, 184, 184),
+            width: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Text('data'),
+                    Text('data'),
+                  ],
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+                Column(
+                  children: [
+                    Text('data'),
+                    Text('data'),
+                  ],
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+                Column(
+                  children: [
+                    Text('data'),
+                    Text('data'),
+                  ],
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+              ],
+            ),
+          )
+          
         ],
       ),
     );
