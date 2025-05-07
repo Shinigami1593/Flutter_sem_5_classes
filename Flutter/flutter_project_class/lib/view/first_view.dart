@@ -31,49 +31,52 @@ class _FirstViewState extends State<FirstView> {
             onPressed: () => Navigator.pushNamed(context, '/palindrome'),
             child: const Text("Palindrome Number"),
           ),
-          SizedBox(
-            height: 100,
-          ),
+          const SizedBox(height: 100),
+
+          // Bottom row with icons and labels
           Container(
             color: const Color.fromARGB(255, 255, 184, 184),
             width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 20),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
-                  children: [
-                    Text('data'),
-                    Text('data'),
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Icon(Icons.call, color: Colors.black),
+                    SizedBox(height: 8),
+                    Text(
+                      'CALL',
+                      style: TextStyle(fontSize: 12, color: Colors.red),
+                    ),
                   ],
-                ),
-
-                SizedBox(
-                  width: 40,
                 ),
                 Column(
-                  children: [
-                    Text('data'),
-                    Text('data'),
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Icon(Icons.near_me, color: Colors.black),
+                    SizedBox(height: 8),
+                    Text(
+                      'ROUTE',
+                      style: TextStyle(fontSize: 12, color: Colors.red),
+                    ),
                   ],
-                ),
-
-                SizedBox(
-                  width: 40,
                 ),
                 Column(
-                  children: [
-                    Text('data'),
-                    Text('data'),
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Icon(Icons.share, color: Colors.black),
+                    SizedBox(height: 8),
+                    Text(
+                      'SHARE',
+                      style: TextStyle(fontSize: 12, color: Colors.red),
+                    ),
                   ],
-                ),
-
-                SizedBox(
-                  width: 40,
                 ),
               ],
             ),
-          )
-          
+          ),
         ],
       ),
     );
