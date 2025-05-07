@@ -31,11 +31,18 @@ class _FirstViewState extends State<FirstView> {
             onPressed: () => Navigator.pushNamed(context, '/palindrome'),
             child: const Text("Palindrome Number"),
           ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, '/column'),
+            child: const Text("Column View"),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, '/columntwo'),
+            child: const Text("Column View"),
+          ),
           const SizedBox(height: 100),
 
           // Bottom row with icons and labels
           Container(
-            color: const Color.fromARGB(255, 255, 184, 184),
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: Row(
