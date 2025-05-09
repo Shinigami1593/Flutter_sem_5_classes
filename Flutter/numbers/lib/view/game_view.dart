@@ -39,7 +39,6 @@ class GameViewState extends State<GameView> {
         (!isFirstSelected && secondNumber > firstNumber);
 
     resultList.add(isCorrect);
-    totalClicks++;
 
     if (totalClicks >= maxTries) {
       int correctCount = resultList.where((e) => e).length;
