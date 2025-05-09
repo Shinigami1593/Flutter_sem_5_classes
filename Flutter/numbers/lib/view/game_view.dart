@@ -31,7 +31,7 @@ class GameViewState extends State<GameView> {
       } while (firstNumber == secondNumber);
     });
   }
-
+ 
   void handleSelection(bool isFirstSelected) {
     if (totalClicks >= maxTries) return;
 
