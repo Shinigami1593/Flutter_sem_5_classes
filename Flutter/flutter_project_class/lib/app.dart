@@ -6,6 +6,7 @@ import 'package:flutter_project_class/view/column_view_2.dart';
 import 'package:flutter_project_class/view/container_view.dart';
 import 'package:flutter_project_class/view/first_view.dart';
 import 'package:flutter_project_class/view/interest.dart';
+import 'package:flutter_project_class/view/load_image_view.dart';
 import 'package:flutter_project_class/view/palindrome.dart';
 
 class App extends StatelessWidget {
@@ -23,7 +24,8 @@ class App extends StatelessWidget {
         '/palindrome':(context) => PalindromeNumber(),
         '/column' : (context) => ColumnView(),
         '/columntwo' : (context) => ColumnViewTwo(),
-        '/container' : (context) => ContainerView()
+        '/container' : (context) => ContainerView(),
+        '/loadimage' : (context) => LoadImageView(),
       },
     );
   }
