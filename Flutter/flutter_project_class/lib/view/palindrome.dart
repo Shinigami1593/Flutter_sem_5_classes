@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_class/modal/palindrome_modal.dart';
+import 'package:flutter_project_class/model/palindrome_modal.dart';
 
 class PalindromeNumber extends StatefulWidget {
   const PalindromeNumber({super.key});

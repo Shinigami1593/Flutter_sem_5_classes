@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_class/modal/simple_interest_modal.dart';
+import 'package:flutter_project_class/model/simple_interest_modal.dart';
 
 class SimpleInterest extends StatefulWidget {
   const SimpleInterest({super.key});

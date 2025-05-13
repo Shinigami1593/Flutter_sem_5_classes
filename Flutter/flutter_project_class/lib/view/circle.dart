@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_class/modal/circle_area_modal.dart';
+import 'package:flutter_project_class/model/circle_area_modal.dart';
 
 class Circle extends StatefulWidget {
   const Circle({super.key});

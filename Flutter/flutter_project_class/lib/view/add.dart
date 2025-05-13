@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_class/modal/add_modal.dart';
+import 'package:flutter_project_class/model/add_modal.dart';
 
 class AddNumbers extends StatefulWidget {
   const AddNumbers({super.key});
