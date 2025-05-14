@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class FlexibleExpandedView extends StatelessWidget {
   const FlexibleExpandedView({super.key});
@@ -11,7 +12,16 @@ class FlexibleExpandedView extends StatelessWidget {
           Expanded(
             child: GestureDetector(
               // ignore: avoid_print
-              onTap: () => print('container 1 pressed'),
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Container 1'),
+                    backgroundColor: Colors.green,
+                    behavior: SnackBarBehavior.floating,
+                    duration: Duration(seconds: 1),
+                  )
+                );
+              },
               child: Container(
                 // height: 400,
                 alignment: Alignment.center,
@@ -24,7 +34,16 @@ class FlexibleExpandedView extends StatelessWidget {
           Expanded( // flex.loose + flex.tight ko byproduct
             child: GestureDetector(
               // ignore: avoid_print
-              onDoubleTap: () => print('container 2 tapped'),
+              onDoubleTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Container 2'),
+                    backgroundColor: Colors.red,
+                    behavior: SnackBarBehavior.floating,
+                    duration: Duration(seconds: 1),
+                  )
+                );
+              },
               child: Container(
                 // height: 300,
                 alignment: Alignment.center,
