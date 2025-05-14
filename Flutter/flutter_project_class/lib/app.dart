@@ -5,8 +5,10 @@ import 'package:flutter_project_class/view/column_view.dart';
 import 'package:flutter_project_class/view/column_view_2.dart';
 import 'package:flutter_project_class/view/container_view.dart';
 import 'package:flutter_project_class/view/first_view.dart';
+import 'package:flutter_project_class/view/flexible_expanded_view.dart';
 import 'package:flutter_project_class/view/interest.dart';
 import 'package:flutter_project_class/view/load_image_view.dart';
+import 'package:flutter_project_class/view/media_query_view.dart';
 import 'package:flutter_project_class/view/palindrome.dart';
 
 class App extends StatelessWidget {
@@ -26,6 +28,8 @@ class App extends StatelessWidget {
         '/columntwo' : (context) => ColumnViewTwo(),
         '/container' : (context) => ContainerView(),
         '/loadimage' : (context) => LoadImageView(),
+        '/media' : (context) => MediaQueryView(),
+        '/flexible' : (context) => FlexibleExpandedView(),
       },
     );
   }
