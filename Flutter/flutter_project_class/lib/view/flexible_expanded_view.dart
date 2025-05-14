@@ -9,14 +9,16 @@ class FlexibleExpandedView extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: 200,
+            height: 400,
             width: double.infinity,
             color: Colors.greenAccent,
           ),
-          Container(
-            height: 200,
-            width: double.infinity,
-            color: Colors.amber,
+          Expanded( // flex.loose + flex.tight ko byproduct
+            child: Container(
+              height: 300,
+              width: double.infinity,
+              color: Colors.amber,
+            ),
           ),
         ],
       ),
