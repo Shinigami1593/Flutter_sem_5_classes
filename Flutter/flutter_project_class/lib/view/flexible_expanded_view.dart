@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_project_class/common/my_snackbar.dart';
 
 class FlexibleExpandedView extends StatelessWidget {

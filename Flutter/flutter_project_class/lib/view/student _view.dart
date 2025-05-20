@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_class/app.dart';
 import 'package:flutter_project_class/model/student_model.dart';
 
 class StudentView extends StatefulWidget {
