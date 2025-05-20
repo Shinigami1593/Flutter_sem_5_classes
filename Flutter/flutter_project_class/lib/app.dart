@@ -7,6 +7,7 @@ import 'package:flutter_project_class/view/column_view_2.dart';
 import 'package:flutter_project_class/view/container_view.dart';
 import 'package:flutter_project_class/view/first_view.dart';
 import 'package:flutter_project_class/view/flexible_expanded_view.dart';
+import 'package:flutter_project_class/view/grid_view_screen.dart';
 import 'package:flutter_project_class/view/interest.dart';
 import 'package:flutter_project_class/view/load_image_view.dart';
 import 'package:flutter_project_class/view/media_query_view.dart';
@@ -36,6 +37,7 @@ class App extends StatelessWidget {
         '/rowsandcolumn' : (context) => RowsAndColumnView(),
         '/student' : (context) => StudentView(),
         '/card' : (context) => CardView(),
+        '/grid' : (context) => GridViewScreen(),
       },
     );
   }

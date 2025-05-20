@@ -67,6 +67,10 @@ class _FirstViewState extends State<FirstView> {
             onPressed: () => Navigator.pushNamed(context, '/card'),
             child: const Text("Card View"),
           ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, '/grid'),
+            child: const Text("Grid View"),
+          ),
           const SizedBox(height: 100),
 
           // Bottom row with icons and labels
