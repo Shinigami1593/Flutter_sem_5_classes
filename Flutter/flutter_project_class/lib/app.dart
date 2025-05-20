@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_class/view/add.dart';
+import 'package:flutter_project_class/view/calculator_view.dart';
 import 'package:flutter_project_class/view/card_view.dart';
 import 'package:flutter_project_class/view/circle.dart';
 import 'package:flutter_project_class/view/column_view.dart';
@@ -38,6 +39,7 @@ class App extends StatelessWidget {
         '/student' : (context) => StudentView(),
         '/card' : (context) => CardView(),
         '/grid' : (context) => GridViewScreen(),
+        '/calc' : (context) => CalculatorView(),
       },
     );
   }
