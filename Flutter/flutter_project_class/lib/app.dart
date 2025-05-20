@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_class/view/add.dart';
+import 'package:flutter_project_class/view/card_view.dart';
 import 'package:flutter_project_class/view/circle.dart';
 import 'package:flutter_project_class/view/column_view.dart';
 import 'package:flutter_project_class/view/column_view_2.dart';
@@ -10,6 +11,8 @@ import 'package:flutter_project_class/view/interest.dart';
 import 'package:flutter_project_class/view/load_image_view.dart';
 import 'package:flutter_project_class/view/media_query_view.dart';
 import 'package:flutter_project_class/view/palindrome.dart';
+import 'package:flutter_project_class/view/rows_and_column_view.dart';
+import 'package:flutter_project_class/view/student%20_view.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -30,6 +33,9 @@ class App extends StatelessWidget {
         '/loadimage' : (context) => LoadImageView(),
         '/media' : (context) => MediaQueryView(),
         '/flexible' : (context) => FlexibleExpandedView(),
+        '/rowsandcolumn' : (context) => RowsAndColumnView(),
+        '/student' : (context) => StudentView(),
+        '/card' : (context) => CardView(),
       },
     );
   }

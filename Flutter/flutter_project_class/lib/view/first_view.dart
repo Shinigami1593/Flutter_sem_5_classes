@@ -55,6 +55,18 @@ class _FirstViewState extends State<FirstView> {
             onPressed: () => Navigator.pushNamed(context, '/flexible'),
             child: const Text("Flexible view"),
           ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, '/rowsandcolumn'),
+            child: const Text("Rowss and column view"),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, '/student'),
+            child: const Text("Student View"),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, '/card'),
+            child: const Text("Card View"),
+          ),
           const SizedBox(height: 100),
 
           // Bottom row with icons and labels
