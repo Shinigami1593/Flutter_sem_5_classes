@@ -1,5 +1,7 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_project_class/model/student_model.dart';
+import 'package:flutter_project_class/view/output_view.dart';
 
 class StudentView extends StatefulWidget {
   const StudentView({super.key});
@@ -9,127 +11,170 @@ class StudentView extends StatefulWidget {
 }
 
 class _StudentViewState extends State<StudentView> {
+  final lstCity = ["Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara"];
 
-String? city;
-final items = [
-  const DropdownMenuItem(
-    value: 'Kathmandu',
-    child: Text("Kathmandu"),
-  ),
-  const DropdownMenuItem(
-    value: 'Pokhara',
-    child: Text("Pokhara"),
-  ),
-  const DropdownMenuItem(
-    value: 'Chitwan',
-    child: Text("Chitwan"),
-  ),
-];
+  final  lstStudent = <StudentModel>[];
+  final fnameController = TextEditingController();
+  final lnameController = TextEditingController();
 
-final lstCity = ["Kathmandu","Pokhara","Chitwan"];
-final List<StudentModel> lstStudents = [];
-final fnameController = TextEditingController();
-final lnameController = TextEditingController();
+  String? selectedCity;
 
-final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
+
+  _showAlertDialog(BuildContext context, StudentModel student){
+    AlertDialog alert = AlertDialog(
+      title: const Text("Delete?"),
+      content: Text('Are you sure you want to delete $student.frame ?? '),
+      actions: [
+        TextButton(
+          child: const Text('No'), 
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
+        TextButton(
+          child: const Text('Yes'), 
+          onPressed: (){
+            setState(() {
+              lstStudent.remove(student);
+            });
+            Navigator.pop(context);
+          },
+        )
+      ],
+    );
+
+    showDialog(
+      context: context, 
+      builder: (BuildContext context){
+        return alert;
+      }
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Student ListView'),
-      ),
-      body: Column(
-        children: [
-          SizedBox(height: 8),
-          SizedBox(height: 8),
+      appBar: AppBar(title: const Text("Student View"), centerTitle: true),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
               TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                controller: fnameController,
+                decoration: const InputDecoration(
                   labelText: "First Name",
+                  hintText: "Enter your first name",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(color: Colors.blue, width: 2),
+                  ),
                 ),
                 validator: (value) {
-                  if (value == null || value.isEmpty){
-                    return "First Name";
+                  if (value == null || value.isEmpty) {
+                    return "Please enter your first name";
                   }
                   return null;
                 },
               ),
-              SizedBox(height: 8),
-              SizedBox(height: 8),
+              const SizedBox(height: 10),
               TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                controller: lnameController,
+                decoration: const InputDecoration(
                   labelText: "Last Name",
+                  hintText: "Enter your last name",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(color: Colors.blue, width: 2),
+                  ),
                 ),
                 validator: (value) {
-                  if (value == null || value.isEmpty){
-                    return "Please enter first number";
+                  if (value == null || value.isEmpty) {
+                    return "Please enter your last name";
                   }
                   return null;
                 },
               ),
-              SizedBox(height: 8),
-              SizedBox(height: 8),
-              DropdownButtonFormField(
-                icon: const Icon(Icons.arrow_downward),
-                items: items, 
-                onChanged: (value){
+              const SizedBox(height: 10),
+              DropdownButtonFormField<String>(
+                decoration: const InputDecoration(
+                  labelText: "Select City",
+                  hintText: "Select your city",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(color: Colors.blue, width: 2),
+                  ),
+                ),
+                value: selectedCity,
+                items:
+                    lstCity.map((city) {
+                      return DropdownMenuItem(value: city, child: Text(city));
+                    }).toList(),
+                onChanged: (value) {
                   setState(() {
-                    city = value;
+                    selectedCity = value;
                   });
                 },
-                hint: const Text('Selected City'),
-                decoration: const InputDecoration(
-                  labelText: 'Select City',
-                  border: OutlineInputBorder()
-                ),
-                validator: (value){
-                  if(value == null){
-                    return 'Please select city';
+                validator: (value) {
+                  if (value == null) {
+                    return "Please select your city";
                   }
                   return null;
                 },
               ),
-              SizedBox(
-                width:double.infinity,
-                child: ElevatedButton(
-                  onPressed: (){
-                    if(_formKey.currentState!.validate() && city != null){
-                      StudentModel student = StudentModel(fname: fnameController.text,
-                       lname: lnameController.text, city: city!,);
-                       setState(() {
-                         lstStudents.add(student);
-                       });
-                    }
-                  },
-                   child: Text('Add Student'))),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: (){},
-                   child: Text('Show Student')
-                  )
+              const SizedBox(height: 10),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue[100],
+                  padding: const EdgeInsets.all(15),
+                ),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    lstStudent.add(StudentModel(fname: fnameController.text, lname: lnameController.text, city: selectedCity!,)
+                      );
+                    setState(() {});
+                    // fnameController.clear();
+                    // lnameController.clear();
+                    // setState(() {
+                    //   selectedCity = null;
+                    // });
+                  }
+                },
+                child: const Text("Submit"),
               ),
-              Expanded(child: lstStudents.isNotEmpty? ListView.builder(
-                itemCount: lstStudents.length,
-                itemBuilder: (context,index){
-                  return ListTile(
-                    leading: const Icon(Icons.person),
-                    title: Text(
-                      '${lstStudents[index].fname} ${lstStudents[index].lname}'
+              const SizedBox(height: 10),
+              lstCity.isEmpty
+                  ? const Text("No data found")
+                  : Expanded(
+                    child: ListView.builder(
+                      itemCount: lstStudent.length,
+                      itemBuilder: (context, index) {
+                        var current = lstStudent[index];
+                        return ListTile(
+                          title: Text(
+                            "${current.fname} ${current.lname}",
+                          ),
+                          subtitle: Text(current.city),
+                          trailing: IconButton(
+                            icon: const Icon(Icons.delete),
+                            onPressed: () {
+                              var curr = current;
+                              _showAlertDialog(context, curr);
+                            },
+                          ),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => OutputView(studentModel: current)));
+                          },
+                        );
+                      },
                     ),
-                    subtitle: Text(lstStudents[index].city),
-                    trailing: const Icon(Icons.more_vert),
-                    onTap: () {
-
-                    },
-                  );
-                }
-                ) : const Text('No data'))
-        ],
+                  ),
+            ],
+          ),
+        ),
       ),
     );
   }
