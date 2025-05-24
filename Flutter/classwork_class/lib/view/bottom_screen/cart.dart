@@ -10,6 +10,6 @@ class CartScreenView extends StatefulWidget {
 class _CartScreenViewState extends State<CartScreenView> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('Cart us'),);
+    return const Center(child: Text('Cart page'),);
   }
 }
