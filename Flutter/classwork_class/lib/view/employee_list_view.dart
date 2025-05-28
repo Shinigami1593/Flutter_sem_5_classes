@@ -1,6 +1,7 @@
 // ignore: depend_on_referenced_packages
 import 'package:classwork_class/model/employee_model.dart';
 import 'package:classwork_class/state/employee_state.dart';
+import 'package:classwork_class/view/table_view/detail.dart';
 import 'package:flutter/material.dart';
 
 class EmployeeView extends StatefulWidget {

@@ -22,12 +22,12 @@ class _FirstViewState extends State<FirstView> {
             child: Text('Emplyoee view')
           ),
           ElevatedButton(
-            onPressed: () => Navigator.pushNamed(context, '/table'), 
-            child: Text('Table view')
-          ),
-          ElevatedButton(
             onPressed: () => Navigator.pushNamed(context, '/bottom'), 
             child: Text('Bottom NAvigation view')
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, '/table'), 
+            child: Text('table view')
           ),
         ],
       ),
