@@ -166,7 +166,13 @@ class _StudentViewState extends State<StudentView> {
                             },
                           ),
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => OutputView(studentModel: current)));
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(
+                                builder:
+                                (context) => OutputView(studentModel: current)
+                              )
+                            );
                           },
                         );
                       },

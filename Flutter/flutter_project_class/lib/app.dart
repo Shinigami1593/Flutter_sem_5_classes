@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_class/themes/theme_data.dart';
 import 'package:flutter_project_class/view/add.dart';
 import 'package:flutter_project_class/view/calculator_view.dart';
 import 'package:flutter_project_class/view/card_view.dart';
@@ -15,6 +16,7 @@ import 'package:flutter_project_class/view/media_query_view.dart';
 import 'package:flutter_project_class/view/palindrome.dart';
 import 'package:flutter_project_class/view/rows_and_column_view.dart';
 import 'package:flutter_project_class/view/student%20_view.dart';
+import 'package:flutter_project_class/view/time.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -24,6 +26,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "First Task",
       home: FirstView(),
+      theme: getApplicationTheme(),
       routes: {
         '/add' : (context) => const AddNumbers(),
         '/circle':(context) => Circle(),
@@ -40,6 +43,7 @@ class App extends StatelessWidget {
         '/card' : (context) => CardView(),
         '/grid' : (context) => GridViewScreen(),
         '/calc' : (context) => CalculatorView(),
+        '/time' : (context) => TimeView(),
       },
     );
   }

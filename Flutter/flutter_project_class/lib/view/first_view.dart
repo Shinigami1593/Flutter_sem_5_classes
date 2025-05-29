@@ -11,7 +11,7 @@ class _FirstViewState extends State<FirstView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Dashboard")),
+      appBar: AppBar(title: const Text("Dashboard", style: TextStyle(fontFamily: 'Opensans Bold',fontSize: 30),)),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -74,6 +74,10 @@ class _FirstViewState extends State<FirstView> {
           ElevatedButton(
             onPressed: () => Navigator.pushNamed(context, '/calc'),
             child: const Text("calculator View"),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, '/time'),
+            child: const Text("time View"),
           ),
           const SizedBox(height: 100),
 
