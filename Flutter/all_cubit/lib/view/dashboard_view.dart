@@ -9,6 +9,7 @@ class DashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 124, 167, 241),
         title: Text('Dashboard'),
         centerTitle: true,
       ),
@@ -60,6 +61,21 @@ class DashboardView extends StatelessWidget {
                   Icon(Icons.person_4_outlined, size: 48,),
                   SizedBox(height: 15,),
                   Text('Counter Cubit')
+                ],
+              ),
+            ),
+          ),
+          Card(
+            child: InkWell(
+              onTap: () {
+                // context.read<DashboardCubit>().openStudentCubit(context);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.calculate, size: 48,),
+                  SizedBox(height: 15,),
+                  Text('Arithmetic Bloc')
                 ],
               ),
             ),
