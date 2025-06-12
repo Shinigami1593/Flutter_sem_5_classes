@@ -5,11 +5,11 @@ import 'package:student_management/core/error/failure.dart';
 import 'package:student_management/features/course/domain/repository/course_repository.dart';
 
 class DeleteCourseParams extends Equatable {
-  final String id;
+  final String courseId;
 
-  const DeleteCourseParams({required this.id});
+  const DeleteCourseParams({required this.courseId});
 
-  const DeleteCourseParams.empty() : id = '_empty.string';
+  const DeleteCourseParams.empty() : courseId = '_empty.string';
 
   @override
   List<Object?> get props => [id];
@@ -25,6 +25,6 @@ class DeleteCourseUsecase
 
   @override
   Future<Either<Failure, void>> call(DeleteCourseParams params) {
-    return _courseRepository.deleteCourse(params.id);
+    return _courseRepository.deleteCourse(params.courseId);
   }
 }

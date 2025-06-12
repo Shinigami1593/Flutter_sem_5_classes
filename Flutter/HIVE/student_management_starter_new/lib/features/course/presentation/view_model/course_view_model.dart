@@ -66,7 +66,7 @@ class CourseViewModel extends Bloc<CourseEvent, CourseState> {
     await Future.delayed(const Duration(seconds: 1));
 
     final result = await _deleteCourseUsecase(
-      DeleteCourseParams(id: event.courseId),
+      DeleteCourseParams(courseId: event.courseId),
     );
     result.fold(
       (failure) =>
