@@ -17,7 +17,7 @@ class CourseRemoteDatasource implements ICourseDataSource{
       final batchApiModel = CourseApiModel.fromEntity(course);
       
       var response = await _apiService.dio.post(
-        ApiEndpoints.createBatch,
+        ApiEndpoints.createCourse,
         data: batchApiModel.toJson(),
       );
 
@@ -40,7 +40,7 @@ class CourseRemoteDatasource implements ICourseDataSource{
   Future<void> deleteCourse(String courseId) async{
     try {
       var response = await _apiService.dio.delete(
-        '${ApiEndpoints.deleteBatch}/$courseId',
+        '${ApiEndpoints.deleteCourse}/$courseId',
       );
 
       if (response.statusCode == 200) {
@@ -61,7 +61,7 @@ class CourseRemoteDatasource implements ICourseDataSource{
   @override
   Future<List<CourseEntity>> getCourses() async{
     try {
-      final response = await _apiService.dio.get(ApiEndpoints.getAllBatch);
+      final response = await _apiService.dio.get(ApiEndpoints.getAllCourse);
       if (response.statusCode == 200) {
         GetallCourseDTO getAllCourseDTO = GetallCourseDTO.fromJson(response.data);
         return CourseApiModel.toEntityList(getAllCourseDTO.data);

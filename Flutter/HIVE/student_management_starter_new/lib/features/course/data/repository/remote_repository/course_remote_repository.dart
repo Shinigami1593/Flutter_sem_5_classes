@@ -21,9 +21,9 @@ class CourseRemoteRepository implements ICourseRepository{
   }
 
   @override
-  Future<Either<Failure, void>> deleteCourse(String id) async{
+  Future<Either<Failure, void>> deleteCourse(String courseId) async{
     try {
-      await _courseRemoteDatasource.deleteCourse(id);
+      await _courseRemoteDatasource.deleteCourse(courseId);
       return const Right(null);
     } catch (e) {
       return Left(RemoteDatabaseFailure(message: e.toString()));
