@@ -45,6 +45,7 @@ class RegisterViewModel extends Bloc<RegisterEvent, RegisterState> {
   ) async {
     emit(state.copyWith(isLoading: true));
 
+
     final result = await _studentRegisterUsecase(
       RegisterUserParams(
         fname: event.fName,

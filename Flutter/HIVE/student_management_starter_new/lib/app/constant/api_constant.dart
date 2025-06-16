@@ -23,6 +23,7 @@ class ApiEndpoints {
   static const String updateStudent = "auth/updateStudent/";
   static const String deleteStudent = "auth/deleteStudent/";
   static const String uploadImage = "auth/uploadImage";
+  static const String getCurrentUser = "auth/getMe";
 
   // Batch
   static const String createBatch = "batch/createBatch";

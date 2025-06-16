@@ -23,7 +23,7 @@ class CourseApiModel extends Equatable {
 
   //To JSON
   Map<String,dynamic> toJson(){
-    return {'_id' : courseId, 'couseName': courseName};
+    return {'_id' : courseId, 'courseName': courseName};
   }
 
   //Convert Entity to APi

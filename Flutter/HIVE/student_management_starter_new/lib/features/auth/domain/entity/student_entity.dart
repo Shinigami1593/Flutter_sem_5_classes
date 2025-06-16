@@ -22,7 +22,7 @@ class StudentEntity extends Equatable {
     required this.batch,
     required this.courses,
     required this.username,
-    required this.password,
+    required this.password, String? studentId,
   });
 
   @override

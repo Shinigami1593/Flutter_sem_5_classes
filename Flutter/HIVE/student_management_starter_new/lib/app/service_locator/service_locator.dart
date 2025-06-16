@@ -3,7 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:student_management/core/network/api_service.dart';
 import 'package:student_management/core/network/hive_service.dart';
 import 'package:student_management/features/auth/data/data_source/local_datasource/student_local_datasource.dart';
-import 'package:student_management/features/auth/data/repository/local_repository/student_local_repository.dart';
+import 'package:student_management/features/auth/data/dto/student_local_repository.dart';
 import 'package:student_management/features/auth/domain/use_case/student_get_current_usecase.dart';
 import 'package:student_management/features/auth/domain/use_case/student_image_upload_usecase.dart';
 import 'package:student_management/features/auth/domain/use_case/student_login_usecase.dart';
@@ -20,7 +20,6 @@ import 'package:student_management/features/batch/domain/use_case/get_all_batch_
 import 'package:student_management/features/batch/presentation/view_model/batch_view_model.dart';
 import 'package:student_management/features/course/data/data_source/local_datasource/course_local_data_source.dart';
 import 'package:student_management/features/course/data/data_source/remote_datasource/course_remote_datasource.dart';
-import 'package:student_management/features/course/data/repository/local_repository/course_local_repository.dart';
 import 'package:student_management/features/course/data/repository/remote_repository/course_remote_repository.dart';
 import 'package:student_management/features/course/domain/use_case/create_course_usecase.dart';
 import 'package:student_management/features/course/domain/use_case/delete_course_usecase.dart';
